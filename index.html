@@ -1,50 +1,144 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section id="intro">
+                    <section>
+                        <h1>Introduction to JavaScript and DOM</h1>
+                    </section>
+                    <section>
+                        <h2>What is JavaScript?</h2>
+                        <p>
+                            JavaScript is a programming language, just like python. For example, we also have constructs 
+                            like variables, if-else conditionals, loops, functions in JavaScript. The logic stays the same, 
+                            only the syntax differs.
+                        </p>
+                        <pre>
+<code>
+function fibonacci (n) {
+    if (n === 1 || n === 2) {
+        return 1 ;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2) ;
+    }
+}
+</code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>What's special about JavaScript?</h2>
+                        <ul>
+                            <li> JavaScript is the language of the web
+                            <li> Adds interactivity to your webpage, makes it rich. That’s the difference between a web app and a web site.
+                            <li> Most popular and most available
+                                <ol>
+                                    <li>Node.js for server applications
+                                    <li>Apache Cordova for mobile applications
+                                    <li>node-webkit for desktop software
+                                </ol>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## What we're going to byld today
+                        Code is available at http://github.com/peey/dom-js-hackeve  
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                        Let's see a demo
+                        </script>
+                    </section>
+                    </section>
+                <section>
+                  <section><h1>Syntax</h1></section>
+                </section>
+                <section>
+                  <section><h1>The Document Object Model &amp; Events</h1></section>
+                  <section data-markdown>
+                      <script type="text/template">
+                      ## The Document Object Model
+                      
+                      - We're familiar with the HTML syntax, with nested elements. That's the textual representation.
+                      - DOM is a way of representation so that each element of the page be programatically accessed and manipulated.
+                      - DOM allows us to do things like
+                        - Change *attributes* of an element
+                        - Add or remove elements from the page
+                        - Change the *text content* of an element
+                        - Add or remove child elements
+                      </script>
+                      <aside class="notes">
+                          Should probably explain with an example
+                      </aside>
+                  </section>
+                  <section data-markdown>
+                      <script type="text/template">
+                      ## The Event Model
+                      
+                      - We're familiar with the HTML syntax, with nested elements. That's the textual representation.
+                      - DOM is a way of representation so that each element of the page be programatically accessed and manipulated.
+                      - DOM allows us to do things like
+                        - Change *attributes* of an element
+                        - Add or remove elements from the page
+                        - Change the *text content* of an element
+                        - Add or remove child elements
+                      </script>
+                  </section>
+                </section>
+                <section>
+                  <section><h1>Todo Application, part 1</h1></section>
+                  <section>
+                      
+                  </section>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                    ## Additional Resources
+                    
+                     - Be aware of cross-browser differences.
+                     - Eloquent JavaScript is a freely available e-book by Marijn Haverbeke, you can find it on http://eloquentjavascript.net/ 
+                     - MDN for reference. It’s like man for JavaScript. Precede your search engine query with MDN and you’ll find the appropriate entry on the MDN website which is https://developer.mozilla.org/
+                    </script>
+                </section>
+            </div>
+        </div>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
 </html>
