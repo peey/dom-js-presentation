@@ -49,11 +49,16 @@ function fibonacci (n) {
                     </section>
                     <section>
                         <h2>What's special about JavaScript?</h2>
-                        <ul>
+                        <ul style="transform:scale(0.8)">
                             <li> JavaScript is the language of the web
-                            <li> Adds interactivity to your webpage, makes it rich. That’s the difference between a web app and a web site.
+                            <li> Adds interactivity to your webpage, makes it rich
+                            <li> Compare a regular website to the gmail website.
                             <li> Most popular and most available
+                            <li> What you can do with JavaScript
                                 <ol>
+                                    <li>Add flavor to simple web graphics
+                                    <li>Interactive charts and visualizations
+                                    <li>WebGL, canvas and Unity for game and graphics
                                     <li>Node.js for server applications
                                     <li>Apache Cordova for mobile applications
                                     <li>node-webkit for desktop software
@@ -61,6 +66,13 @@ function fibonacci (n) {
                             </li>
                         </ul>
                     </section>
+                    
+                    <aside class="notes">
+                        <ul>
+                            <li>Example of a webpage <a href="http://example.com/">example.com</a></li>
+                            <li>Example of a web app: gmail</li>
+                        </ul>
+                    </aside>
                     <section data-markdown>
                         <script type="text/template">
                         ## What we're going to byld today
@@ -73,6 +85,12 @@ function fibonacci (n) {
                 <section>
                   <section><h1>Syntax</h1></section>
                 </section>
+                
+                <section>
+                    <section><h1>Some Language Theory</h1></section>
+                    <section>Functions as a first-class citizens</section>
+                </section>
+                
                 <section>
                   <section><h1>The Document Object Model &amp; Events</h1></section>
                   <section data-markdown>
@@ -91,18 +109,25 @@ function fibonacci (n) {
                           Should probably explain with an example
                       </aside>
                   </section>
-                  <section data-markdown>
-                      <script type="text/template">
-                      ## The Event Model
-                      
-                      - We're familiar with the HTML syntax, with nested elements. That's the textual representation.
-                      - DOM is a way of representation so that each element of the page be programatically accessed and manipulated.
-                      - DOM allows us to do things like
-                        - Change *attributes* of an element
-                        - Add or remove elements from the page
-                        - Change the *text content* of an element
-                        - Add or remove child elements
-                      </script>
+                  <section>
+                      <div data-markdown style="transform:scale(0.8)">
+                          <script type="text/template">
+                          ## The Event Model
+
+                          - Things related to interaction like clicking on an element, scrolling your page, etc are modelled as an event for programatic access
+                          - Allows us to attach code to be executed when a certain event happens
+                          - Allows us to have a "cause and effect" flow-of-control in our code
+                          - Some events of interest
+                            - click event
+                            - touch events
+                            - keypress events
+                            - scroll events
+                            - DOMContentLoaded event
+                          </script>
+                      </div>
+                      <aside class="notes">
+                          Example of a scroll event website <a href="http://www.soleilnoir.net/believein/">soleilnoir.net/believein/</a>
+                      </aside>
                   </section>
                 </section>
                 <section>
@@ -111,14 +136,28 @@ function fibonacci (n) {
                       
                   </section>
                 </section>
-                <section data-markdown>
-                    <script type="text/template">
-                    ## Additional Resources
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Additional Resources
+
+                         - Be aware of cross-browser differences.
+                         - Eloquent JavaScript is a freely available e-book by Marijn Haverbeke, you can find it on http://eloquentjavascript.net/ 
+                         - MDN for reference. It’s like man for JavaScript. Precede your search engine query with MDN and you’ll find the appropriate entry on the MDN website which is https://developer.mozilla.org/
+                        </script>
+                    </section>
                     
-                     - Be aware of cross-browser differences.
-                     - Eloquent JavaScript is a freely available e-book by Marijn Haverbeke, you can find it on http://eloquentjavascript.net/ 
-                     - MDN for reference. It’s like man for JavaScript. Precede your search engine query with MDN and you’ll find the appropriate entry on the MDN website which is https://developer.mozilla.org/
-                    </script>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Different Verticals
+
+                         - jQuery for adding basic functionality and animations to your webpage
+                         - Bootstrap, Zurb Foundation for pretty webpages
+                         - mithril.js, React.js, AngularJS (version 1) for MVC app developement
+                         - ProcessingJS for full blown animation and basic game developement on Khan Academy
+                         
+                        </script>
+                    </section>
                 </section>
             </div>
         </div>
