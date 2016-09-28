@@ -81,9 +81,118 @@ function fibonacci (n) {
                         Let's see a demo
                         </script>
                     </section>
+                    <section>
+                    Now open up your browser consoles
                     </section>
+                </section>
                 <section>
-                  <section><h1>Syntax</h1></section>
+                    <section><h1>Syntax and Language</h1></section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Data Types
+                        
+                        - integers `1`
+                        - floats (decimal numbers) `2.5`
+                        - string `"hello world"` or `'hello world'`
+                        - array `[1, 2.5, "hello world"]`
+                        - object literals `var x = {a: 1, b: "d"}`, accessed by `x.a`
+                        - `true, false, undefined, null, NaN`
+                        
+                        ## Operators
+                        
+                        - `+` works as addition if both operands are either integers or floats, even if one is string then it works as string concatenation. Any other data type is tried to be converted to string.
+                        - `-, *, /` try to convert the operands to numbers
+                        - `&&, ||, !` are the logical operators
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Variable Declarations
+                        
+                        Each variable has to be "declared", otherwise we'll get a ReferenceError
+                        There are 3 kinds of variable declarations
+
+                        ```js
+                        let a = 1
+                        var b = 2.5
+                        const c = 3
+                        
+                        // some differences between the 3
+                        // a and b can be assigned a new value
+                        a = 3
+                        b = 4
+                        
+                        // c can't be assigned a new value
+                        c = 5 //will give an error
+                        
+                        if (...some condition...) {
+                            var x = "something"
+                        }
+
+                        // x is visible here
+                        if (...some condition...) {
+                            let y = "something else"
+                        }
+
+                        // y can't be accessed here, it can only be accessed in the if statement's "body"
+                        ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Functions
+                        
+                        ```js
+                        // functions can be declared in 3 ways
+                        
+                        function <function-name> (<paramemter1>, <parameter2>, ...) {
+                            //function code
+                            return <something> // optional return value, default return value is undefined
+                        }
+                        
+                        var f = function (...) {
+                            ...
+                        }
+                        
+                        // "arrow" functions
+                        var g = (<parameters>) => (<single statement whose value will be returned>)
+                        
+                        ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Functions, continued
+                        
+                        ```js
+                        
+                        var a = g()
+                        
+                        function g () {
+                            return 4
+                        }
+                        
+                        console.log(a)
+                        
+                        
+                        var b = h()
+                        
+                        var h = function () {
+                            return 5
+                        }
+                        
+                        console.log(b)
+                        ```
+                        
+                        The difference is that the first declaration is "hoisted" to the top of its current function scope.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## A note on ASI (Automatic Semicolon Insertion)
+                        
+                        </script>
+                    </section>
                 </section>
                 
                 <section>
