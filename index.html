@@ -82,7 +82,7 @@ function fibonacci (n) {
                         </script>
                     </section>
                     <section>
-                    Now open up your browser consoles
+                    First we'll go over some language theory, so open up your browser consoles
                     </section>
                 </section>
                 <section>
@@ -97,11 +97,17 @@ function fibonacci (n) {
                         - array `[1, 2.5, "hello world"]`
                         - object literals `var x = {a: 1, b: "d"}`, accessed by `x.a`
                         - `true, false, undefined, null, NaN`
-                        
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
                         ## Operators
                         
                         - `+` works as addition if both operands are either integers or floats, even if one is string then it works as string concatenation. Any other data type is tried to be converted to string.
                         - `-, *, /` try to convert the operands to numbers
+                        - `<, >, <=, >=` are relational operators
+                        - `==` is the weak-equality operator, it tries to do type conversion
+                        - `===` is the equality operator, it doesn't do any type conversion
                         - `&&, ||, !` are the logical operators
                         </script>
                     </section>
@@ -154,7 +160,7 @@ function fibonacci (n) {
                             ...
                         }
                         
-                        // "arrow" functions
+                        // "arrow" functions, just syntactic sugar
                         var g = (<parameters>) => (<single statement whose value will be returned>)
                         
                         ```
@@ -189,7 +195,125 @@ function fibonacci (n) {
                     </section>
                     <section data-markdown>
                         <script type="text/template">
+                        ## Scoping
+                        
+                        There are two levels of scope, global and local
+
+                        ```js
+                        
+                        function g () {
+                            var x = "foo"
+                            console.log(x)
+                        }
+                        
+                        function h () {
+                            var x = "bar"
+                            console.log(x)
+                        }
+                        
+                        function i () {
+                            console.log(x)
+                        }
+                        
+                        function j () {
+                            var x = "surprise"
+                            // all global variables are stored as a key of the window object
+                            console.log(x, window.x)
+                        }
+                        
+                        function k () {
+                            var x = "tuesday"
+                            function l () {
+                                var x = "wednesday"
+                                // there's no way to get the parent scope's x
+                                console.log(x, window.x)
+                            }
+                            
+                            l()
+                        }
+                        
+                        var x = "baz"
+                        
+                        g()
+                        h()
+                        i()
+                        j()
+                        k()
+                        // note, we can't access l() here because the function l was declared in only the k's scope
+                        ```
+                        
+                        Also note how we're able to access x even though declaration for x is made after the declaration of functions. Because the functions try to access the variables at the time they're run.
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Closures
+                        
+                        ```js
+                        
+                        function makeCounter () {
+                            var count = 0
+                            return function () {
+                                count = count + 1
+                                return count
+                            }
+                        }
+                        
+                        var c = makeCounter()
+                        
+                        console.log(c())
+                        console.log(c())
+                        console.log(c())
+                        ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
                         ## A note on ASI (Automatic Semicolon Insertion)
+                        
+                        Semicolons are inserted on almost every line break automatically. Hence, they are optional. You need to know where they aren't inserted automatically.
+                        
+                        The rule of thumb is that if the code on the line by itself is sufficient to be meanigful, then semicolon is inserted.
+                        
+                        ```js
+                        
+                        //for instance,
+                        
+                        var a = 5
+                        var a = 5;
+                        
+                        var a =
+                        5
+                        
+                        var a =
+                        5;
+                        
+                        
+                        // semicolon insertion in this
+                        
+                        return {
+                            foo: "bar"
+                        }
+                        
+                        //will look like 
+                        
+                        return {
+                            foo: "bar"
+                        };
+                        
+                        //but for 
+                        
+                        return 
+                        {
+                            foo: "bar"
+                        }
+                        
+                        return;
+                        {
+                            foo: "bar"
+                        }
+                        
+                        ```
                         
                         </script>
                     </section>
