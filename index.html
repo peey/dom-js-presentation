@@ -247,6 +247,25 @@ function fibonacci (n) {
                     </section>
                     <section data-markdown>
                         <script type="text/template">
+                            ## Functions as first-class citizens
+                            
+                            Functions can be stored in variables, passed as arguments, etc.
+                            
+                            ```js
+                            
+                            // a function that takes 2 functions as an argument, and returns a function
+                            function fplusg (f, g) {
+                                return function (x) {
+                                    return f(x) + g(x)
+                                }
+                            }
+                            
+                            ```
+                            
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
                         ## Closures
                         
                         ```js
@@ -270,60 +289,64 @@ function fibonacci (n) {
                     <section data-markdown>
                         <script type="text/template">
                         ## A note on ASI (Automatic Semicolon Insertion)
-                        
+
                         Semicolons are inserted on almost every line break automatically. Hence, they are optional. You need to know where they aren't inserted automatically.
-                        
+
                         The rule of thumb is that if the code on the line by itself is sufficient to be meanigful, then semicolon is inserted.
-                        
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## A note on ASI (Automatic Semicolon Insertion)
+
                         ```js
-                        
+
                         //for instance,
-                        
+
                         var a = 5
                         var a = 5;
-                        
+
                         var a =
                         5
-                        
+
                         var a =
                         5;
                         
+                        var a
+                        = 5;
                         
+                        var a
+                        =
+                        5;
+
                         // semicolon insertion in this
-                        
+
                         return {
                             foo: "bar"
                         }
-                        
+
                         //will look like 
-                        
+
                         return {
                             foo: "bar"
                         };
-                        
+
                         //but for 
-                        
+
                         return 
                         {
                             foo: "bar"
                         }
-                        
+
                         return;
                         {
                             foo: "bar"
-                        }
-                        
+                        };
+
                         ```
-                        
                         </script>
                     </section>
-                </section>
-                
-                <section>
-                    <section><h1>Some Language Theory</h1></section>
-                    <section>Functions as a first-class citizens</section>
-                </section>
-                
+                </section>                
                 <section>
                   <section><h1>The Document Object Model &amp; Events</h1></section>
                   <section data-markdown>
@@ -364,10 +387,7 @@ function fibonacci (n) {
                   </section>
                 </section>
                 <section>
-                  <section><h1>Todo Application, part 1</h1></section>
-                  <section>
-                      
-                  </section>
+                    <h1>Let's Code!</h1>
                 </section>
                 <section>
                     <section data-markdown>
@@ -377,6 +397,7 @@ function fibonacci (n) {
                          - Be aware of cross-browser differences.
                          - Eloquent JavaScript is a freely available e-book by Marijn Haverbeke, you can find it on http://eloquentjavascript.net/ 
                          - MDN for reference. It’s like man for JavaScript. Precede your search engine query with MDN and you’ll find the appropriate entry on the MDN website which is https://developer.mozilla.org/
+                         
                         </script>
                     </section>
                     
