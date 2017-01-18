@@ -27,6 +27,7 @@
                 <section id="intro">
                     <section>
                         <h1>Introduction to JavaScript and DOM</h1>
+                        Slides available at <a href="http://peey.github.io/dom-js-presentation/">http://peey.github.io/dom-js-presentation/</a>
                     </section>
                     <section>
                         <h2>What is JavaScript?</h2>
@@ -76,7 +77,7 @@ function fibonacci (n) {
                     <section data-markdown>
                         <script type="text/template">
                         ## What we're going to byld today
-                        Code is available at http://github.com/peey/dom-js-todo-app
+                        Code is available at http://peey.github.io/dom-js-todo-app
 
                         Let's see a demo
                         </script>
@@ -266,6 +267,23 @@ function fibonacci (n) {
                     </section>
                     <section data-markdown>
                         <script type="text/template">
+                        ## SetInterval and SetTimeout
+                        
+                        ```js
+                        
+                        var i = 0;
+                        var f = function () {
+                            console.log("Hello World #" + i);
+                            i++;
+                        }
+                        
+                        setTimeout(f, 200);
+                        setTInterval(f, 200);
+                        ```
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
                         ## Closures
                         
                         ```js
@@ -279,10 +297,13 @@ function fibonacci (n) {
                         }
                         
                         var c = makeCounter()
+                        var d = makeCounter()
                         
                         console.log(c())
                         console.log(c())
                         console.log(c())
+
+                        console.log(d())
                         ```
                         </script>
                     </section>
@@ -361,9 +382,26 @@ function fibonacci (n) {
                         - Change the *text content* of an element
                         - Add or remove child elements
                       </script>
-                      <aside class="notes">
-                          Should probably explain with an example
-                      </aside>
+                  </section>
+                  <section>
+                      <h2>Exhibit A: A HTML page</h2>
+                      <pre>
+<code>
+<html>
+    <head>
+        <title>My Title</title>
+    </head>
+    <body>
+        <a href="http://www.google.com">My Link</a>
+        <h1>My Header</h1>
+    </body>
+</html>
+</code>
+                      </pre>
+                  </section>
+                  <section>
+                      <h2>Exhibit B: A DOM Tree</h2>
+                      <img src="http://www.w3schools.com/js/pic_htmltree.gif">
                   </section>
                   <section>
                       <div data-markdown style="transform:scale(0.8)">
@@ -382,22 +420,80 @@ function fibonacci (n) {
                           </script>
                       </div>
                       <aside class="notes">
+                          The point of this section is that it determines when the code runs
                           Example of a scroll event website <a href="http://www.soleilnoir.net/believein/">soleilnoir.net/believein/</a>
                       </aside>
                   </section>
                 </section>
                 <section>
-                    <h1>Let's Code!</h1>
+                    <section><h1>Let's Code!</h1></section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 0 - The Setup
+                        The breakdown:
+                        - Boilerplate HTML with CSS
+                        - Link to JS file
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 1 - Programatic UI
+                        The breakdown:
+                        - Represent todo data in a "data model"
+                        - Create elements programatically based on data
+                        - Update the current document with new elements
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 2 - Adding Todos
+                        The breakdown:
+                        - Make a function to get value entered in the input box
+                        - Let the function be executed whenever the "Add Todo" button is clicked
+                        - Make changes to the data model &amp; refresh UI
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 3 - Done and Delete
+                        The breakdown:
+                        - Need a way to identify the todo items
+                        - We can't use the array index as the id, why?
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 3 - Done and Delete
+                        The breakdown:
+                        - Need a way to identify the todo items
+                        - Make a function `markAsDone` to change the "done" attribute of todo with that id
+                        - Make a function `removeTodo`
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## The Code: Milestone 4 - The Edit Box
+                        The breakdown:
+                        - A mechanism to display the previous value in edit box
+                        - A mechanism to update/replace the todo with new text
+                        - A mechanism to show/hide edit box
+                        - A trigger to show/hide edit box
+                        </script>
+                    </section>
                 </section>
                 <section>
-                    <section data-markdown>
+                    <section data-markdown style="transform:scale(0.8)">
                         <script type="text/template">
                         ## Additional Resources
 
                          - Be aware of cross-browser differences.
                          - Eloquent JavaScript is a freely available e-book by Marijn Haverbeke, you can find it on http://eloquentjavascript.net/ 
                          - MDN for reference. It’s like man for JavaScript. Precede your search engine query with MDN and you’ll find the appropriate entry on the MDN website which is https://developer.mozilla.org/
-                         
+                         - Very Very In-Depth: 
+                            - Practical JavaScript, DOM Scripting, and Ajax Projects by Frank W. Zammetti
+                            - DOM Scripting by Jeremy Keith
+                         - [stackoverflow.com](http://stackoverflow.com)'s [How to ask a question](http://stackoverflow.com/help/how-to-ask)
+                         - [jsfiddle.net](http://jsfiddle.net)
                         </script>
                     </section>
                     
@@ -407,9 +503,34 @@ function fibonacci (n) {
 
                          - jQuery for adding basic functionality and animations to your webpage
                          - Bootstrap, Zurb Foundation for pretty webpages
-                         - mithril.js, React.js, AngularJS (version 1) for MVC app developement
+                         - React.js, AngularJS (version 1), Knockout.js for MVC app developement
                          - ProcessingJS for full blown animation and basic game developement on Khan Academy
                          
+                        </script>
+                        <aside class="notes">
+                            <ul>
+                                <li> https://jsfiddle.net/SusannDelgado/F2n3r/
+                                <li> http://viralpatel.net/blogs/understanding-jquery-animate-function/
+                            </ul>
+                        </aside>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## What You Can Do Next
+                         - [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage)
+                         - [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition)
+                         - [Vibration API](https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API)
+                         - Animations! [1](http://api.jquery.com/animate/) [2](https://www.sitepoint.com/guide-jquery-animate-method/)
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Interesting Things for Some Other Time
+                         - AJAX
+                         - Canvas
+                         - WebGL
+                         - WebSockets
+                         - WebRTC
                         </script>
                     </section>
                 </section>
